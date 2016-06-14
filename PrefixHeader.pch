@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  fixeAdsTest
+//
+//  Created by Rui Cardoso on 14/06/16.
+//  Copyright © 2016 Rui Cardoso. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "constants.h"
+
+#import <CoreData/CoreData.h>
+#import <FontAwesomeKit/FontAwesomeKit.h>
+#endif /* PrefixHeader_pch */

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
+    <entity name="Ad" representedClassName="Ad" syncable="YES">
+        <attribute name="ad_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ad_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="has_email" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_highlighted" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_negotiable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_top_ad" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="map_latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="map_longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="map_radius" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="map_zoom" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url_preview" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_ads_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Photo" inverseName="ad" inverseEntity="Photo" syncable="YES"/>
+    </entity>
+    <entity name="Photo" representedClassName="Photo" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="slot" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ad" inverseName="photos" inverseEntity="Ad" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Ad" positionX="-63" positionY="-18" width="128" height="345"/>
+        <element name="Photo" positionX="-54" positionY="90" width="128" height="105"/>
+    </elements>
+</model>

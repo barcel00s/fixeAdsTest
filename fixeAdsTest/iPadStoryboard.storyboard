@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kdH-HT-tCz">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -26,7 +26,7 @@
         <!--Root View Controller-->
         <scene sceneID="bKo-9j-gf1">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="JTz-gq-phl" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="JTz-gq-phl" customClass="itemListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IBh-pO-rz6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
         <!--Split View Controller-->
         <scene sceneID="ix7-R0-7qj">
             <objects>
-                <splitViewController id="kdH-HT-tCz" sceneMemberID="viewController">
+                <splitViewController id="kdH-HT-tCz" customClass="splitViewController" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Zi3-nR-C0p" kind="relationship" relationship="masterViewController" id="pOQ-IO-Mtf"/>
                         <segue destination="s0m-mJ-M7d" kind="relationship" relationship="detailViewController" id="6GX-xX-usJ"/>

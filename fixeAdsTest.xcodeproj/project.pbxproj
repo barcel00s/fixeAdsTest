@@ -7,7 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53F63D275D5E601F930517BC /* libPods-fixeAdsTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7F3C4EF46F8B38BD08AB33 /* libPods-fixeAdsTest.a */; };
+		9C1D72D2B4BEAAC1C24C5705 /* libPods-fixeAdsTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA4F708A0A2D94CF1FC0E8D /* libPods-fixeAdsTestTests.a */; };
+		EB2C3179B31D87E262D6EEF4 /* libPods-fixeAdsTestUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D53778F1B7C90B0106825DB1 /* libPods-fixeAdsTestUITests.a */; };
 		F329116F1D10580700E8D23D /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F329116E1D10580700E8D23D /* iPadStoryboard.storyboard */; };
+		F32911721D10594B00E8D23D /* itemListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911711D10594B00E8D23D /* itemListTableViewController.m */; };
+		F32911791D105EDE00E8D23D /* itemListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911771D105EDE00E8D23D /* itemListTableViewCell.m */; };
+		F329117A1D105EDE00E8D23D /* itemListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32911781D105EDE00E8D23D /* itemListTableViewCell.xib */; };
+		F329117D1D106BB400E8D23D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F329117B1D106BB400E8D23D /* Model.xcdatamodeld */; };
+		F329117F1D107D0B00E8D23D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F329117E1D107D0B00E8D23D /* CoreData.framework */; };
+		F32911891D107F7300E8D23D /* Ad+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911821D107F7300E8D23D /* Ad+CoreDataProperties.m */; };
+		F329118A1D107F7300E8D23D /* Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911841D107F7300E8D23D /* Ad.m */; };
+		F329118B1D107F7300E8D23D /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911861D107F7300E8D23D /* Photo+CoreDataProperties.m */; };
+		F329118C1D107F7300E8D23D /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911881D107F7300E8D23D /* Photo.m */; };
+		F329118F1D10BF7200E8D23D /* splitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F329118E1D10BF7200E8D23D /* splitViewController.m */; };
 		F3C04E441D1051F5001DE898 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C04E431D1051F5001DE898 /* main.m */; };
 		F3C04E471D1051F5001DE898 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C04E461D1051F5001DE898 /* AppDelegate.m */; };
 		F3C04E4A1D1051F5001DE898 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C04E491D1051F5001DE898 /* ViewController.m */; };
@@ -36,7 +49,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FA4F708A0A2D94CF1FC0E8D /* libPods-fixeAdsTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fixeAdsTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48CB3F5D0C9D1FFFEC61D924 /* Pods-fixeAdsTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fixeAdsTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fixeAdsTestTests/Pods-fixeAdsTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		59FB998AF9BA0F05E11C770C /* Pods-fixeAdsTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fixeAdsTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-fixeAdsTest/Pods-fixeAdsTest.release.xcconfig"; sourceTree = "<group>"; };
+		5C2FD2B4E8C6C16BC2F2BFF5 /* Pods-fixeAdsTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fixeAdsTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fixeAdsTestUITests/Pods-fixeAdsTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E7F3C4EF46F8B38BD08AB33 /* libPods-fixeAdsTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fixeAdsTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85CA800DEC008DC0446177F2 /* Pods-fixeAdsTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fixeAdsTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fixeAdsTest/Pods-fixeAdsTest.debug.xcconfig"; sourceTree = "<group>"; };
+		9F5FA00BC87EFD3431B801A5 /* Pods-fixeAdsTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fixeAdsTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fixeAdsTestTests/Pods-fixeAdsTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		D53778F1B7C90B0106825DB1 /* libPods-fixeAdsTestUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fixeAdsTestUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F329116E1D10580700E8D23D /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
+		F32911701D10594B00E8D23D /* itemListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itemListTableViewController.h; sourceTree = "<group>"; };
+		F32911711D10594B00E8D23D /* itemListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itemListTableViewController.m; sourceTree = "<group>"; };
+		F32911741D105AEB00E8D23D /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		F32911751D105B3200E8D23D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F32911761D105EDE00E8D23D /* itemListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itemListTableViewCell.h; sourceTree = "<group>"; };
+		F32911771D105EDE00E8D23D /* itemListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itemListTableViewCell.m; sourceTree = "<group>"; };
+		F32911781D105EDE00E8D23D /* itemListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = itemListTableViewCell.xib; sourceTree = "<group>"; };
+		F329117C1D106BB400E8D23D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		F329117E1D107D0B00E8D23D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F32911811D107F7300E8D23D /* Ad+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Ad+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F32911821D107F7300E8D23D /* Ad+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Ad+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F32911831D107F7300E8D23D /* Ad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ad.h; sourceTree = "<group>"; };
+		F32911841D107F7300E8D23D /* Ad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ad.m; sourceTree = "<group>"; };
+		F32911851D107F7300E8D23D /* Photo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F32911861D107F7300E8D23D /* Photo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F32911871D107F7300E8D23D /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		F32911881D107F7300E8D23D /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		F329118D1D10BF7200E8D23D /* splitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splitViewController.h; sourceTree = "<group>"; };
+		F329118E1D10BF7200E8D23D /* splitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splitViewController.m; sourceTree = "<group>"; };
 		F3C04E3F1D1051F5001DE898 /* fixeAdsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fixeAdsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C04E431D1051F5001DE898 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3C04E451D1051F5001DE898 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +93,7 @@
 		F3C04E631D1051F5001DE898 /* fixeAdsTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fixeAdsTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C04E671D1051F5001DE898 /* fixeAdsTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fixeAdsTestUITests.m; sourceTree = "<group>"; };
 		F3C04E691D1051F5001DE898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F92E5398079C9D9F900DE868 /* Pods-fixeAdsTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fixeAdsTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fixeAdsTestUITests/Pods-fixeAdsTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F329117F1D107D0B00E8D23D /* CoreData.framework in Frameworks */,
+				53F63D275D5E601F930517BC /* libPods-fixeAdsTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1D72D2B4BEAAC1C24C5705 /* libPods-fixeAdsTestTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,19 +118,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB2C3179B31D87E262D6EEF4 /* libPods-fixeAdsTestUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B48E2669825C763590EE596 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E7F3C4EF46F8B38BD08AB33 /* libPods-fixeAdsTest.a */,
+				1FA4F708A0A2D94CF1FC0E8D /* libPods-fixeAdsTestTests.a */,
+				D53778F1B7C90B0106825DB1 /* libPods-fixeAdsTestUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F32911801D107F5200E8D23D /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				F32911811D107F7300E8D23D /* Ad+CoreDataProperties.h */,
+				F32911821D107F7300E8D23D /* Ad+CoreDataProperties.m */,
+				F32911831D107F7300E8D23D /* Ad.h */,
+				F32911841D107F7300E8D23D /* Ad.m */,
+				F32911851D107F7300E8D23D /* Photo+CoreDataProperties.h */,
+				F32911861D107F7300E8D23D /* Photo+CoreDataProperties.m */,
+				F32911871D107F7300E8D23D /* Photo.h */,
+				F32911881D107F7300E8D23D /* Photo.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 		F3C04E361D1051F5001DE898 = {
 			isa = PBXGroup;
 			children = (
+				F329117E1D107D0B00E8D23D /* CoreData.framework */,
+				F32911751D105B3200E8D23D /* PrefixHeader.pch */,
+				F32911741D105AEB00E8D23D /* constants.h */,
 				F3C04E411D1051F5001DE898 /* fixeAdsTest */,
 				F3C04E5B1D1051F5001DE898 /* fixeAdsTestTests */,
 				F3C04E661D1051F5001DE898 /* fixeAdsTestUITests */,
 				F3C04E401D1051F5001DE898 /* Products */,
+				FA6EB8370B0FEBA09A5A042E /* Pods */,
+				0B48E2669825C763590EE596 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,16 +178,25 @@
 		F3C04E411D1051F5001DE898 /* fixeAdsTest */ = {
 			isa = PBXGroup;
 			children = (
+				F32911801D107F5200E8D23D /* Core Data */,
 				F3C04E451D1051F5001DE898 /* AppDelegate.h */,
 				F3C04E461D1051F5001DE898 /* AppDelegate.m */,
 				F3C04E481D1051F5001DE898 /* ViewController.h */,
 				F3C04E491D1051F5001DE898 /* ViewController.m */,
+				F32911701D10594B00E8D23D /* itemListTableViewController.h */,
+				F32911711D10594B00E8D23D /* itemListTableViewController.m */,
+				F32911761D105EDE00E8D23D /* itemListTableViewCell.h */,
+				F32911771D105EDE00E8D23D /* itemListTableViewCell.m */,
+				F32911781D105EDE00E8D23D /* itemListTableViewCell.xib */,
 				F3C04E4B1D1051F5001DE898 /* iPhone.storyboard */,
 				F329116E1D10580700E8D23D /* iPadStoryboard.storyboard */,
 				F3C04E4E1D1051F5001DE898 /* Assets.xcassets */,
 				F3C04E501D1051F5001DE898 /* LaunchScreen.storyboard */,
 				F3C04E531D1051F5001DE898 /* Info.plist */,
 				F3C04E421D1051F5001DE898 /* Supporting Files */,
+				F329117B1D106BB400E8D23D /* Model.xcdatamodeld */,
+				F329118D1D10BF7200E8D23D /* splitViewController.h */,
+				F329118E1D10BF7200E8D23D /* splitViewController.m */,
 			);
 			path = fixeAdsTest;
 			sourceTree = "<group>";
@@ -143,6 +227,19 @@
 			path = fixeAdsTestUITests;
 			sourceTree = "<group>";
 		};
+		FA6EB8370B0FEBA09A5A042E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85CA800DEC008DC0446177F2 /* Pods-fixeAdsTest.debug.xcconfig */,
+				59FB998AF9BA0F05E11C770C /* Pods-fixeAdsTest.release.xcconfig */,
+				48CB3F5D0C9D1FFFEC61D924 /* Pods-fixeAdsTestTests.debug.xcconfig */,
+				9F5FA00BC87EFD3431B801A5 /* Pods-fixeAdsTestTests.release.xcconfig */,
+				F92E5398079C9D9F900DE868 /* Pods-fixeAdsTestUITests.debug.xcconfig */,
+				5C2FD2B4E8C6C16BC2F2BFF5 /* Pods-fixeAdsTestUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3C04E6C1D1051F5001DE898 /* Build configuration list for PBXNativeTarget "fixeAdsTest" */;
 			buildPhases = (
+				5DC9B899C3F2741B57A1C411 /* [CP] Check Pods Manifest.lock */,
 				F3C04E3B1D1051F5001DE898 /* Sources */,
 				F3C04E3C1D1051F5001DE898 /* Frameworks */,
 				F3C04E3D1D1051F5001DE898 /* Resources */,
+				DE4C5A4451393D7BCB174DB6 /* [CP] Embed Pods Frameworks */,
+				2CE887D04AF9C83CE7ADCBF9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3C04E6F1D1051F5001DE898 /* Build configuration list for PBXNativeTarget "fixeAdsTestTests" */;
 			buildPhases = (
+				B04C1B2C70E4EF02ADA801B8 /* [CP] Check Pods Manifest.lock */,
 				F3C04E541D1051F5001DE898 /* Sources */,
 				F3C04E551D1051F5001DE898 /* Frameworks */,
 				F3C04E561D1051F5001DE898 /* Resources */,
+				21323275B02F98B7AEF8E3FB /* [CP] Embed Pods Frameworks */,
+				50BF81CF4F547D354A37DB94 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,9 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3C04E721D1051F5001DE898 /* Build configuration list for PBXNativeTarget "fixeAdsTestUITests" */;
 			buildPhases = (
+				10A79E946A17BF1E2B4CF8CC /* [CP] Check Pods Manifest.lock */,
 				F3C04E5F1D1051F5001DE898 /* Sources */,
 				F3C04E601D1051F5001DE898 /* Frameworks */,
 				F3C04E611D1051F5001DE898 /* Resources */,
+				7B2A0DF6A42CA63687887BA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F329117A1D105EDE00E8D23D /* itemListTableViewCell.xib in Resources */,
 				F3C04E521D1051F5001DE898 /* LaunchScreen.storyboard in Resources */,
 				F3C04E4F1D1051F5001DE898 /* Assets.xcassets in Resources */,
 				F3C04E4D1D1051F5001DE898 /* iPhone.storyboard in Resources */,
@@ -269,6 +375,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10A79E946A17BF1E2B4CF8CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		21323275B02F98B7AEF8E3FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fixeAdsTestTests/Pods-fixeAdsTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CE887D04AF9C83CE7ADCBF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fixeAdsTest/Pods-fixeAdsTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50BF81CF4F547D354A37DB94 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fixeAdsTestTests/Pods-fixeAdsTestTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DC9B899C3F2741B57A1C411 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7B2A0DF6A42CA63687887BA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fixeAdsTestUITests/Pods-fixeAdsTestUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B04C1B2C70E4EF02ADA801B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE4C5A4451393D7BCB174DB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fixeAdsTest/Pods-fixeAdsTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F3C04E3B1D1051F5001DE898 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,7 +505,15 @@
 			files = (
 				F3C04E4A1D1051F5001DE898 /* ViewController.m in Sources */,
 				F3C04E471D1051F5001DE898 /* AppDelegate.m in Sources */,
+				F32911721D10594B00E8D23D /* itemListTableViewController.m in Sources */,
+				F329118B1D107F7300E8D23D /* Photo+CoreDataProperties.m in Sources */,
 				F3C04E441D1051F5001DE898 /* main.m in Sources */,
+				F329118A1D107F7300E8D23D /* Ad.m in Sources */,
+				F329118F1D10BF7200E8D23D /* splitViewController.m in Sources */,
+				F32911891D107F7300E8D23D /* Ad+CoreDataProperties.m in Sources */,
+				F32911791D105EDE00E8D23D /* itemListTableViewCell.m in Sources */,
+				F329118C1D107F7300E8D23D /* Photo.m in Sources */,
+				F329117D1D106BB400E8D23D /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +595,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -401,6 +640,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -417,6 +658,7 @@
 		};
 		F3C04E6D1D1051F5001DE898 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85CA800DEC008DC0446177F2 /* Pods-fixeAdsTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -424,11 +666,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ruicardoso.fixeAdsTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		F3C04E6E1D1051F5001DE898 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59FB998AF9BA0F05E11C770C /* Pods-fixeAdsTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -436,11 +680,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ruicardoso.fixeAdsTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		F3C04E701D1051F5001DE898 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48CB3F5D0C9D1FFFEC61D924 /* Pods-fixeAdsTestTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = fixeAdsTestTests/Info.plist;
@@ -453,6 +699,7 @@
 		};
 		F3C04E711D1051F5001DE898 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F5FA00BC87EFD3431B801A5 /* Pods-fixeAdsTestTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = fixeAdsTestTests/Info.plist;
@@ -465,6 +712,7 @@
 		};
 		F3C04E731D1051F5001DE898 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F92E5398079C9D9F900DE868 /* Pods-fixeAdsTestUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = fixeAdsTestUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -476,6 +724,7 @@
 		};
 		F3C04E741D1051F5001DE898 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C2FD2B4E8C6C16BC2F2BFF5 /* Pods-fixeAdsTestUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = fixeAdsTestUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -525,6 +774,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F329117B1D106BB400E8D23D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F329117C1D106BB400E8D23D /* Model.xcdatamodel */,
+			);
+			currentVersion = F329117C1D106BB400E8D23D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F3C04E371D1051F5001DE898 /* Project object */;
 }
