@@ -23,3 +23,14 @@ A visualização das imagens pode ser feita fazendo scroll directamente ou selec
 A partir daqui também é possível consultar a geolocalização do anúncio seleccionando a opção para ver o anúncio no mapa.
 
 A aplicação pode funcionar completamente em modo offline sendo apenas possível consultar eventos já carregados na base de dados.
+
+A aplicação está ainda preparada para se adaptar ao tamanho de fonte seleccionada pelo o utilizador nas definições do dispositivo(General -> Acessibilility -> Large Text) , embora devido a um bug do simulador do iOS 9.3, apenas é possível testar esta funcionalidade com um dispositivo real. 
+
+
+Bibliotecas iOS utilizadas:
+MapKit,
+Core Data
+
+Bliblitecas de 3ºs utilizadas (via CocoaPods):
+FontAwesomeKit - https://github.com/PrideChung/FontAwesomeKit
+
