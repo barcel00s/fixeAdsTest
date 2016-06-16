@@ -42,20 +42,18 @@
 
 -(void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered{
     
-    //Place all the annotations after initial rendering
-    
-    NSLog(@"lat: %@ - lon: %@",_selectedAd.map_latitude,_selectedAd.map_longitude);
+    //Place all the annotations after initial rendering    
     
     if (!_hasPlacedAnnotations && _selectedAd.map_latitude && _selectedAd.map_longitude) {
         MKPointAnnotation *newAnnotation = [self makeSimpleAnnotation];
         [_mapView addAnnotation:newAnnotation];
         
-        //Center map on location - Deprecated. We show the full route instead.
-        /*        [_mapView setCenterCoordinate:newAnnotation.coordinate animated:YES];
+        
+        [_mapView setCenterCoordinate:newAnnotation.coordinate animated:YES];
          
-         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(newAnnotation.coordinate, kDistanceRadiusForRegion, kDistanceRadiusForRegion);
+         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(newAnnotation.coordinate, 1000, 1000);
          
-         [_mapView setRegion:region animated:NO]; */
+        [_mapView setRegion:region animated:NO];
         [_mapView selectAnnotation:newAnnotation animated:YES];
         
         

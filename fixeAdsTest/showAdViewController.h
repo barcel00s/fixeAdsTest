@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Ad.h"
+#import "adViewController.h"
+#import "userAdsTableViewController.h"
+#import "itemListTableViewController.h"
 
-@interface showAdViewController : UIViewController
+@interface showAdViewController : UIViewController <UISplitViewControllerDelegate,UIPageViewControllerDataSource,UIPageViewControllerDelegate,adViewControllerProtocol,UIViewControllerTransitioningDelegate,userAdsTableViewControllerProtocol,itemListTableViewProtocol>
+
 @property (nonatomic, strong) NSArray *ads;
 @property (nonatomic, strong) Ad *selectedAd;
 

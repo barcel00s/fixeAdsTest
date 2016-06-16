@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "itemListTableViewController.h"
+#import "showAdViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +25,22 @@
     [NSURLCache setSharedURLCache:appCache];
     
     _appFont = @"Optima";
+    
+    
+    if (IS_IPAD) {
+        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+        UINavigationController *leftNavigationController = [splitViewController.viewControllers objectAtIndex:0];
+        itemListTableViewController *leftViewController = (itemListTableViewController*)[leftNavigationController topViewController];
+        UINavigationController *rightNavigationController = [splitViewController.viewControllers objectAtIndex:1];
+        showAdViewController *rightViewController = (showAdViewController *)[rightNavigationController topViewController];
+        
+        [splitViewController setPresentsWithGesture:NO];
+        [splitViewController setDelegate:rightViewController];
+        [splitViewController setPreferredDisplayMode:UISplitViewControllerDisplayModeAllVisible];
+        
+        [leftViewController setDelegate:rightViewController];        
+                
+    }
     
     return YES;
 }

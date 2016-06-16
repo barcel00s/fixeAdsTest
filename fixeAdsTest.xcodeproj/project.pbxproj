@@ -39,6 +39,10 @@
 		F3C597BB1D1208580080DE9B /* mapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597BA1D1208580080DE9B /* mapViewController.m */; };
 		F3C597C61D121F2E0080DE9B /* ModalCustomPresentAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597C31D121F2E0080DE9B /* ModalCustomPresentAnimationController.m */; };
 		F3C597C71D121F2E0080DE9B /* ModalCustomDismissAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597C51D121F2E0080DE9B /* ModalCustomDismissAnimationController.m */; };
+		F3C597CA1D12CE510080DE9B /* customNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597C91D12CE510080DE9B /* customNavigationController.m */; };
+		F3C597CD1D12E0F30080DE9B /* userAdsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597CC1D12E0F30080DE9B /* userAdsTableViewController.m */; };
+		F3C597D21D12E2800080DE9B /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597CF1D12E2800080DE9B /* User+CoreDataProperties.m */; };
+		F3C597D31D12E2800080DE9B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597D11D12E2800080DE9B /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,14 @@
 		F3C597C31D121F2E0080DE9B /* ModalCustomPresentAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalCustomPresentAnimationController.m; path = ../ModalCustomPresentAnimationController.m; sourceTree = "<group>"; };
 		F3C597C41D121F2E0080DE9B /* ModalCustomDismissAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalCustomDismissAnimationController.h; path = ../ModalCustomDismissAnimationController.h; sourceTree = "<group>"; };
 		F3C597C51D121F2E0080DE9B /* ModalCustomDismissAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalCustomDismissAnimationController.m; path = ../ModalCustomDismissAnimationController.m; sourceTree = "<group>"; };
+		F3C597C81D12CE510080DE9B /* customNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customNavigationController.h; sourceTree = "<group>"; };
+		F3C597C91D12CE510080DE9B /* customNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customNavigationController.m; sourceTree = "<group>"; };
+		F3C597CB1D12E0F30080DE9B /* userAdsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userAdsTableViewController.h; sourceTree = "<group>"; };
+		F3C597CC1D12E0F30080DE9B /* userAdsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userAdsTableViewController.m; sourceTree = "<group>"; };
+		F3C597CE1D12E2800080DE9B /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F3C597CF1D12E2800080DE9B /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F3C597D01D12E2800080DE9B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F3C597D11D12E2800080DE9B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F92E5398079C9D9F900DE868 /* Pods-fixeAdsTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fixeAdsTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fixeAdsTestUITests/Pods-fixeAdsTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +179,10 @@
 		F32911801D107F5200E8D23D /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				F3C597CE1D12E2800080DE9B /* User+CoreDataProperties.h */,
+				F3C597CF1D12E2800080DE9B /* User+CoreDataProperties.m */,
+				F3C597D01D12E2800080DE9B /* User.h */,
+				F3C597D11D12E2800080DE9B /* User.m */,
 				F32911811D107F7300E8D23D /* Ad+CoreDataProperties.h */,
 				F32911821D107F7300E8D23D /* Ad+CoreDataProperties.m */,
 				F32911831D107F7300E8D23D /* Ad.h */,
@@ -251,12 +267,16 @@
 				F32911A51D1162C800E8D23D /* Ad Detail */,
 				F32911A61D1162E600E8D23D /* Ad List */,
 				F3C04E4B1D1051F5001DE898 /* iPhone.storyboard */,
+				F3C597CB1D12E0F30080DE9B /* userAdsTableViewController.h */,
+				F3C597CC1D12E0F30080DE9B /* userAdsTableViewController.m */,
 				F329116E1D10580700E8D23D /* iPadStoryboard.storyboard */,
 				F3C04E4E1D1051F5001DE898 /* Assets.xcassets */,
 				F3C04E501D1051F5001DE898 /* LaunchScreen.storyboard */,
 				F3C04E531D1051F5001DE898 /* Info.plist */,
 				F3C04E421D1051F5001DE898 /* Supporting Files */,
 				F329117B1D106BB400E8D23D /* Model.xcdatamodeld */,
+				F3C597C81D12CE510080DE9B /* customNavigationController.h */,
+				F3C597C91D12CE510080DE9B /* customNavigationController.m */,
 			);
 			path = fixeAdsTest;
 			sourceTree = "<group>";
@@ -384,6 +404,7 @@
 				TargetAttributes = {
 					F3C04E3E1D1051F5001DE898 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 4RS9Q2M968;
 					};
 					F3C04E571D1051F5001DE898 = {
 						CreatedOnToolsVersion = 7.3;
@@ -574,14 +595,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C597D21D12E2800080DE9B /* User+CoreDataProperties.m in Sources */,
 				F3C04E4A1D1051F5001DE898 /* ViewController.m in Sources */,
 				F32911B21D116ECC00E8D23D /* adViewController.m in Sources */,
 				F3C04E471D1051F5001DE898 /* AppDelegate.m in Sources */,
 				F3C597B51D11D3E80080DE9B /* presentImagesViewController.m in Sources */,
 				F3C597C71D121F2E0080DE9B /* ModalCustomDismissAnimationController.m in Sources */,
+				F3C597D31D12E2800080DE9B /* User.m in Sources */,
 				F32911721D10594B00E8D23D /* itemListTableViewController.m in Sources */,
 				F329118B1D107F7300E8D23D /* Photo+CoreDataProperties.m in Sources */,
 				F3C04E441D1051F5001DE898 /* main.m in Sources */,
+				F3C597CA1D12CE510080DE9B /* customNavigationController.m in Sources */,
+				F3C597CD1D12E0F30080DE9B /* userAdsTableViewController.m in Sources */,
 				F32911AA1D1164EA00E8D23D /* imagePageContentViewController.m in Sources */,
 				F3C597C61D121F2E0080DE9B /* ModalCustomPresentAnimationController.m in Sources */,
 				F329118A1D107F7300E8D23D /* Ad.m in Sources */,
@@ -740,10 +765,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = fixeAdsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ruicardoso.fixeAdsTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -754,10 +781,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = fixeAdsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ruicardoso.fixeAdsTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

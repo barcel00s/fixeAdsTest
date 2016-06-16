@@ -32,9 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *type;
 @property (nullable, nonatomic, retain) NSString *url;
 @property (nullable, nonatomic, retain) NSString *url_preview;
-@property (nullable, nonatomic, retain) NSString *user_ads_url;
-@property (nullable, nonatomic, retain) NSString *username;
 @property (nullable, nonatomic, retain) NSOrderedSet<Photo *> *photos;
+@property (nullable, nonatomic, retain) User *user;
 
 @end
 

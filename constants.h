@@ -20,4 +20,6 @@
 
 #define kTimeTransitionDuration 0.6
 
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
 #endif /* constants_h */

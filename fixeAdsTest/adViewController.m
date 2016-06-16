@@ -9,8 +9,9 @@
 #import "adViewController.h"
 #import "imageSliderViewController.h"
 #import "imagePageContentViewController.h"
+#import "userAdsTableViewController.h"
 
-@interface adViewController () <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+@interface adViewController () <UIPageViewControllerDataSource,UIPageViewControllerDelegate,userAdsTableViewControllerProtocol>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (strong, nonatomic) IBOutlet UIStackView *mainStack;
@@ -39,46 +40,13 @@
     
     
     // Do any additional setup after loading the view from its nib.    
-    
-    if ([_selectedAd.photos count] > 0) {
-        
-        [self configureImageSlider];
-    }
-    else{
-        //This ad hasn't got any images.
-        [_imageSliderContainer layoutIfNeeded];
-        
-        [UIView animateWithDuration:0.5 animations:^{
-            //We hide the image container
-            [_imageContainerHeightConstraint setConstant:0.0];
-            [_imageSliderContainer layoutIfNeeded];
-        }];
-    }
-
-    //Configure the view.    
-    [_usernameLabel setText:_selectedAd.username];
-    [_descriptionLabel setText:_selectedAd.ad_description];
-    [_titleLabel setText:_selectedAd.title];
-    [_locationLabel setText:_selectedAd.city];
-    [_priceLabel setText:_selectedAd.price];
-    
-    if ([_selectedAd.is_negotiable boolValue]) {
-        [_isNegotiableLabel setText:@"Negociável"];
-    }
-    else{
-        [_isNegotiableLabel setText:@"Não negociável"];
-    }
+    [self setupView];
     
     [self refreshFonts];
     
     FAKIonIcons *userIcon = [FAKIonIcons personIconWithSize:40];
-    [_userImageView setImage:[userIcon imageWithSize:CGSizeMake(40, 40)]];
-    
-    
-    FAKIonIcons *tagIcon = [FAKIonIcons iosPricetagsIconWithSize:30];
-    [_showUserItems setImage:[tagIcon imageWithSize:CGSizeMake(30, 30)] forState:UIControlStateNormal];
-    [_showUserItems setTitle:nil forState:UIControlStateNormal];
-    
+    [_showUserItems setImage:[userIcon imageWithSize:CGSizeMake(40, 40)] forState:UIControlStateNormal];
+
     
 }
 
@@ -157,15 +125,24 @@
 #pragma mark Page Controller Delegate
 -(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed{
     
+    imagePageContentViewController *imageController = (imagePageContentViewController *)[pageViewController.viewControllers objectAtIndex:0];
+    
+    _currentImageIndex = imageController.pageIndex;
     
 }
 
 -(void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers{
     
-    imagePageContentViewController *imageController = (imagePageContentViewController *)[pendingViewControllers lastObject];
+
     
-    _currentImageIndex = imageController.pageIndex;
+}
+
+-(void)didSelectAd:(Ad *)selectedAd fromAds:(NSArray *)ads{
+/*    _selectedAd = selectedAd;
     
+    [self setupView];*/
+    
+    [self.delegate didSelectAd:selectedAd fromAds:ads];
 }
 
 #pragma mark Gesture Actions
@@ -175,7 +152,24 @@
 
 #pragma mark Button Actions
 - (IBAction)showUserItems:(UIButton *)sender {
-
+    
+    if (IS_IPAD) {
+        userAdsTableViewController *userAdsController = [[userAdsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        
+        [userAdsController setDelegate:self];
+        [userAdsController setSelectedUser:_selectedAd.user];
+        [userAdsController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        
+        [userAdsController setModalPresentationStyle:UIModalPresentationPopover];
+        [userAdsController.popoverPresentationController setSourceView:_showUserItems];
+        [userAdsController.popoverPresentationController setSourceRect:CGRectMake(30, 15, 1, 1)];
+        
+        [self presentViewController:userAdsController animated:YES completion:nil];
+    }
+    else{
+        [self.delegate showAdsForUser:_selectedAd.user];
+    }
+    
 }
 
 
@@ -183,26 +177,18 @@
 -(void)configureImageSlider{
     
     //Load the image slider
+    
+    if (_imageSlider) {
+        [_imageSlider.view removeFromSuperview];
+    }
+    
     _imageSlider = [[imageSliderViewController alloc] init];
     
     [_imageSlider setPhotos:_selectedAd.photos];
     [_imageSlider setContentMode:UIViewContentModeScaleAspectFill];
     
     [_imageSlider.view setFrame:_imageSliderContainer.frame];
-    
     [_imageSliderContainer addSubview:_imageSlider.view];
-    
-    //Show the image container
-    if (_imageContainerHeightConstraint == 0) {
-        
-        [_imageSliderContainer layoutIfNeeded];
-        
-        [UIView animateWithDuration:0.5 animations:^{
-            //We hide the image container
-            [_imageContainerHeightConstraint setConstant:0.0];
-            [_imageSliderContainer layoutIfNeeded];
-        }];
-    }
     
     
     //Since we're adding the image page controller without a container (via adding view), this controller must be the datasource otherwise the datasource methods aren't called.
@@ -239,7 +225,7 @@
 
 -(void)refreshFonts{
     //Title Label
-    UIFontDescriptor *fontDescriptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleTitle2];
     
     NSNumber *fontSize = fontDescriptor.fontAttributes[UIFontDescriptorSizeAttribute];
     
@@ -264,7 +250,7 @@
     
     
     //Description Label
-    fontDescriptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleSubheadline];
+    fontDescriptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
     
     fontSize = fontDescriptor.fontAttributes[UIFontDescriptorSizeAttribute];
     fontDescriptor = [UIFontDescriptor fontDescriptorWithFontAttributes:@{UIFontDescriptorFamilyAttribute:sharedAppDelegate.appFont}];
@@ -299,11 +285,45 @@
     [_isNegotiableLabel setFont:font];
 }
 
--(void)setScrollViewContentSizeWithDelay{
+-(void)setScrollViewContentSizeWithDelay{    
     
     CGSize contentSize = CGSizeMake(_mainStack.frame.size.width, _mainStack.frame.size.height);
     
     [_mainScrollView setContentSize:contentSize];
 
 }
+
+-(void)setupView{
+    
+    if ([_selectedAd.photos count] > 0) {
+        
+        [self configureImageSlider];
+    }
+    else{         
+        //This ad hasn't got any images.
+        [_imageSliderContainer layoutIfNeeded];
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            //We hide the image container            
+            [_imageContainerHeightConstraint setConstant:0.0];
+            [_imageSliderContainer layoutIfNeeded];
+        }];
+    }
+    
+    //Configure the view.
+    [_usernameLabel setText:_selectedAd.user.name];
+    [_descriptionLabel setText:_selectedAd.ad_description];
+    [_titleLabel setText:_selectedAd.title];
+    [_locationLabel setText:_selectedAd.city];
+    [_priceLabel setText:_selectedAd.price];
+    
+    if ([_selectedAd.is_negotiable boolValue]) {
+        [_isNegotiableLabel setText:@"Negociável"];
+    }
+    else{
+        [_isNegotiableLabel setText:@"Não negociável"];
+    }
+    
+}
+
 @end

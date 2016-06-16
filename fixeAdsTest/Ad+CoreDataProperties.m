@@ -30,8 +30,7 @@
 @dynamic type;
 @dynamic url;
 @dynamic url_preview;
-@dynamic user_ads_url;
-@dynamic username;
 @dynamic photos;
+@dynamic user;
 
 @end

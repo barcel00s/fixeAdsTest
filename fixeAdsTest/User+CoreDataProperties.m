@@ -1,5 +1,5 @@
 //
-//  Photo+CoreDataProperties.m
+//  User+CoreDataProperties.m
 //  fixeAdsTest
 //
 //  Created by Rui Cardoso on 16/06/16.
@@ -9,13 +9,13 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Photo+CoreDataProperties.h"
+#import "User+CoreDataProperties.h"
 
-@implementation Photo (CoreDataProperties)
+@implementation User (CoreDataProperties)
 
-@dynamic data;
-@dynamic slot;
-@dynamic url;
-@dynamic ad;
+@dynamic ads_url;
+@dynamic name;
+@dynamic user_id;
+@dynamic ads;
 
 @end

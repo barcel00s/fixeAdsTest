@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Ad.h"
+
+@class itemListTableViewController;
+
+@protocol itemListTableViewProtocol <NSObject>
+
+-(void)didSelectAd:(Ad *)selectedAd fromAds:(NSArray *)ads;
+
+@end
 
 @interface itemListTableViewController : UITableViewController
+@property (nonatomic, weak) id <itemListTableViewProtocol> delegate;
 
 @end

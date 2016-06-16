@@ -1,43 +1,37 @@
 //
-//  itemListTableViewController.m
+//  userAdsTableViewController.m
 //  fixeAdsTest
 //
-//  Created by Rui Cardoso on 14/06/16.
+//  Created by Rui Cardoso on 16/06/16.
 //  Copyright © 2016 Rui Cardoso. All rights reserved.
 //
 
-#import "itemListTableViewController.h"
+#import "userAdsTableViewController.h"
 #import "itemListTableViewCell.h"
 #import "Ad.h"
-#import "showAdViewController.h"
 
-@interface itemListTableViewController ()<NSFetchedResultsControllerDelegate,itemListTableViewCellProtocol>
-
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic) BOOL hasMorePages;
+@interface userAdsTableViewController ()<NSFetchedResultsControllerDelegate,itemListTableViewCellProtocol>
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *closeButton;
+@property (nonatomic, strong) NSArray *datasource;
 
 @end
 
-@implementation itemListTableViewController
+@implementation userAdsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
-    //Initializations
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(adIndexHasChanged:) name:@"adIndexHasChangedNotification" object:nil];
     
-    [self setTitle:@"Anúncios"];
+    [self.navigationItem setTitle:_selectedUser.name];
     
-    UIImage *logo = [UIImage imageNamed:@"OLX"];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
-    UIView *logoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 60, 60)];
-    [imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [imageView setImage:logo];
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [logoView addSubview:imageView];
-    
-    [self.navigationItem setTitleView:logoView];
+    FAKIonIcons *closeIcon = [FAKIonIcons androidCloseIconWithSize:30];
+    [_closeButton setImage:[closeIcon imageWithSize:CGSizeMake(30, 30)]];
+    [_closeButton setTitle:nil];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"itemListTableViewCell" bundle:nil] forCellReuseIdentifier:@"itemCell"];
     
@@ -59,25 +53,22 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return [[_fetchedResultsController sections] count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    id <NSFetchedResultsSectionInfo> sectionInfo =
-    [[_fetchedResultsController sections] objectAtIndex:section];
     
-    return [sectionInfo numberOfObjects];
+    return [_datasource count];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    itemListTableViewCell *cell = (itemListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"itemCell"];
+    itemListTableViewCell *cell = (itemListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"itemCell" forIndexPath:indexPath];
+    
+    Ad *ad = [[_selectedUser.ads array] objectAtIndex:indexPath.row];
     
     [cell setDelegate:self];
-    
-    Ad *ad = [[_fetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
     
     FAKIonIcons *placeholder = [FAKIonIcons imageIconWithSize:40];
     
@@ -88,6 +79,7 @@
     [cell.customPriceLabel setText:ad.price];
     [cell.customLocationLabel setText:ad.city];
     
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
     
     if ([[ad.photos array] count] > 0) {
         Photo *itemPhoto = [[ad.photos array] objectAtIndex:0];
@@ -134,7 +126,7 @@
                             [sharedAppDelegate saveContext];
                         }];
                     }
-
+                    
                 }
                 
             }] resume];
@@ -146,6 +138,8 @@
         
     }
     
+    
+    
     return cell;
 }
 
@@ -155,85 +149,28 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     return 140.0;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    Ad *selectedAd = [[_fetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
+    Ad *selectedAd = [_datasource objectAtIndex:indexPath.row];
     
-    if (IS_IPAD) {
-        [self.delegate didSelectAd:selectedAd fromAds:[_fetchedResultsController fetchedObjects]];
-    }
-    else{
-        [self performSegueWithIdentifier:@"showAd" sender:selectedAd];
-        
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    }
-}
-/*
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    [self.delegate didSelectAd:selectedAd fromAds:[_selectedUser.ads array]];
     
-    NSString *city = [[[_fetchedResultsController sections] objectAtIndex:section] name];
-    
-    if ([city isEqualToString:@""]) {
-        city = @"Undetermined city";
-    }
-    
-    return city;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 20.0;
-}
-*/
 
-#pragma mark itemListTableViewCell Delegation
--(void)didTapShareButtonForCell:(itemListTableViewCell *)cell{
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-    
-    Ad *selectedAd = [[_fetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
-    
-    NSArray *activityItems = @[cell.customTitleLabel.text,cell.customImageView.image,[NSURL URLWithString:selectedAd.url]];
-    
-    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-    
-    [activityController setExcludedActivityTypes:@[UIActivityTypePostToVimeo,UIActivityTypePostToTencentWeibo,UIActivityTypePostToWeibo,UIActivityTypeAssignToContact,UIActivityTypeOpenInIBooks]];
-    
-    if ( [activityController respondsToSelector:@selector(popoverPresentationController)] ) {
-        
-        [activityController.popoverPresentationController setSourceRect:CGRectMake(0, 15, 1, 1)];
-        [activityController.popoverPresentationController setSourceView:cell.shareButton];
-    }
-    
-    [self presentViewController:activityController
-                                           animated:YES
-                                         completion:nil];
-    
-}
-
-#pragma mark Navigation
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    if ([segue.identifier isEqualToString:@"showAd"]) {
-        showAdViewController *showAdController = (showAdViewController *)segue.destinationViewController;
-        
-        [showAdController setAds:[_fetchedResultsController fetchedObjects]];
-        [showAdController setSelectedAd:sender];
-    }
-    
-}
-
-#pragma mark Functions
 -(void)loadTableView{
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:itemsDatasourceURLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:_selectedUser.ads_url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
-            NSLog(@"Error fetching data from server: %@",error.localizedDescription);
+            NSLog(@"Error fetching user ads from server: %@",error.localizedDescription);
+            
         }
         else{
             NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
@@ -242,10 +179,8 @@
                 NSLog(@"Error decoding response from server: %@",error.localizedDescription);
             }
             else{
-                //NSLog(@"%@",response);
-                
                 //We are creating the ads outside the main thread so we need to create a subcontext (Core Data is not thread safe)
-                
+
                 NSArray *allAds = [response objectForKey:@"ads"];
                 
                 NSManagedObjectContext *subContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
@@ -281,12 +216,7 @@
                 NSLog(@"Error saving main context: %@",error.localizedDescription);
             }
             
-            //Fetch data from Core Data and show results
-            [[self fetchedResultsController] performFetch:&error];
-            
-            if (error) {
-                NSLog(@"Error fetching data: %@",error.localizedDescription);
-            }
+            _datasource = [_selectedUser.ads array];
             
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
@@ -295,39 +225,34 @@
     }] resume];
 }
 
-#pragma mark FetchedResultsController
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
+
+#pragma mark itemListTableViewCell Delegation
+-(void)didTapShareButtonForCell:(itemListTableViewCell *)cell{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    Ad *selectedAd = [[_selectedUser.ads array] objectAtIndex:indexPath.row];
+    
+    NSArray *activityItems = @[cell.customTitleLabel.text,cell.customImageView.image,[NSURL URLWithString:selectedAd.url]];
+    
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    
+    [activityController setExcludedActivityTypes:@[UIActivityTypePostToVimeo,UIActivityTypePostToTencentWeibo,UIActivityTypePostToWeibo,UIActivityTypeAssignToContact,UIActivityTypeOpenInIBooks]];
+    
+    if ( [activityController respondsToSelector:@selector(popoverPresentationController)] ) {
+        
+        [activityController.popoverPresentationController setSourceRect:CGRectMake(0, 15, 1, 1)];
+        [activityController.popoverPresentationController setSourceView:cell.shareButton];
     }
     
-    NSFetchRequest *fetchRequest    = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity     = [NSEntityDescription entityForName:@"Ad" inManagedObjectContext:[sharedAppDelegate managedObjectContext]];
-    [fetchRequest setEntity:entity];
+    [self presentViewController:activityController
+                       animated:YES
+                     completion:nil];
     
-    // Create the sort descriptors array. Order from most recent ID to oldest
-    NSSortDescriptor *idDescriptor   = [NSSortDescriptor sortDescriptorWithKey:@"ad_id" ascending:NO];
-    //NSSortDescriptor *titleDescriptor   = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
-    NSArray *sortDescriptors                = [NSArray arrayWithObjects:idDescriptor, nil];
-    [fetchRequest setSortDescriptors:sortDescriptors];
-
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[sharedAppDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
-    
-    _fetchedResultsController.delegate = self;
-    
-    return _fetchedResultsController;
 }
 
--(void)adIndexHasChanged:(NSNotification *)notification{
-    
-    NSNumber *index = notification.object;
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index.integerValue inSection:0];
-    
-    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
-    
+- (IBAction)close:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
