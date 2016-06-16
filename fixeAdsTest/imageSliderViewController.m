@@ -97,7 +97,7 @@
     
     [pageContentController setPageIndex:index];
     [pageContentController setContentMode:_contentMode];    
-    [pageContentController setSelectedPhoto:[[_photos allObjects] objectAtIndex:index]];
+    [pageContentController setSelectedPhoto:[[_photos array] objectAtIndex:index]];
 
     
     return pageContentController;

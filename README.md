@@ -14,7 +14,8 @@ Este desafio consiste em criar uma aplicação universal (iPad/iPhone) que seja 
 Exemplo de utilização:
 
 Assim que é carregada, esta aplicação apresenta uma tabela com todos os anúncios disponíveis no link, bem como todos os outros já carregados anteriormente.
-Sempre que a app recebe um novo anúncio, guarda o registo do anúncio e das suas fotos em duas tabelas distintas (no Core Data), sendo que as imagens apenas são descarregadas à medida que são requisitadas pelo utilizador, de forma a reduzir o consumo de dados móveis.
+
+Sempre que a app recebe um novo anúncio, guarda o registo do anúncio e das suas fotos em duas tabelas distintas (no Core Data), sendo que as imagens apenas são descarregadas à medida que são requisitadas pelo utilizador, de forma a reduzir o consumo de dados móveis. As imagens são importadas por ordem de slot_id e posteriormente devolvidas nessa ordem pelo core data de forma a que sejam apresentadas sempre por essa ordem.
 
 A partir desta tabela o utilizador pode partilhar o anúncio através de e-mail, mensagem ou nas suas contas de redes sociais associadas ao dispositivo.
 

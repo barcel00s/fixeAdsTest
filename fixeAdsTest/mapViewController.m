@@ -99,7 +99,7 @@
         [imageView setContentMode:UIViewContentModeScaleAspectFit];
         
         if ([_selectedAd.photos count] > 0) {
-            Photo *aPhoto = [[_selectedAd.photos allObjects] objectAtIndex:0];
+            Photo *aPhoto = [[_selectedAd.photos array] objectAtIndex:0];
             
             if (aPhoto.data) {
                 [imageView setImage:[UIImage imageWithData:aPhoto.data]];

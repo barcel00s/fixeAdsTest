@@ -2,7 +2,7 @@
 //  Ad+CoreDataProperties.m
 //  fixeAdsTest
 //
-//  Created by Rui Cardoso on 14/06/16.
+//  Created by Rui Cardoso on 16/06/16.
 //  Copyright © 2016 Rui Cardoso. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,6 +14,8 @@
 @implementation Ad (CoreDataProperties)
 
 @dynamic ad_description;
+@dynamic ad_id;
+@dynamic city;
 @dynamic has_email;
 @dynamic is_highlighted;
 @dynamic is_negotiable;
@@ -22,6 +24,7 @@
 @dynamic map_longitude;
 @dynamic map_radius;
 @dynamic map_zoom;
+@dynamic price;
 @dynamic subtype;
 @dynamic title;
 @dynamic type;
@@ -29,9 +32,6 @@
 @dynamic url_preview;
 @dynamic user_ads_url;
 @dynamic username;
-@dynamic ad_id;
-@dynamic city;
-@dynamic price;
 @dynamic photos;
 
 @end

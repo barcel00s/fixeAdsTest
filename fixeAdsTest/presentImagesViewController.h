@@ -10,5 +10,5 @@
 
 @interface presentImagesViewController : UIViewController
 @property (nonatomic) NSInteger selectedIndex;
-@property (nonatomic, strong) NSSet *photos;
+@property (nonatomic, strong) NSOrderedSet *photos;
 @end

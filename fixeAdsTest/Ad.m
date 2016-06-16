@@ -60,13 +60,20 @@
     NSDictionary *photos = [details objectForKey:@"photos"];
     NSArray *photosData = [photos objectForKey:@"data"];
     
+    //We sort by slot to import in the correct order
+    NSSortDescriptor *sortBySlot = [NSSortDescriptor sortDescriptorWithKey:@"slot_id" ascending:YES];
+    photosData = [photosData sortedArrayUsingDescriptors:@[sortBySlot]];
+    
     for(NSDictionary *photoData in photosData){
         NSMutableDictionary *newDictionary = [photoData mutableCopy];
         [newDictionary setObject:[photos objectForKey:@"riak_key"] forKey:@"riak_key"];
         
         Photo *newPhoto = [Photo createPhotoWithDetails:newDictionary inContext:context];
         
-        [newAd addPhotosObject:newPhoto];
+        NSMutableOrderedSet *newSet = [newAd.photos mutableCopy];
+        [newSet addObject:newPhoto];
+        
+        [newAd setPhotos:newSet];
     }
     
     return newAd;

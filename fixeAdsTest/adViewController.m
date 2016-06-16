@@ -149,7 +149,7 @@
     [pageContentController setPageIndex:index];
     [pageContentController setContentMode:UIViewContentModeScaleAspectFill];
     
-    [pageContentController setSelectedPhoto:[[_imageSlider.photos allObjects] objectAtIndex:index]];
+    [pageContentController setSelectedPhoto:[[_imageSlider.photos array] objectAtIndex:index]];
     
     return pageContentController;
 }

@@ -82,8 +82,8 @@
     [cell.customPriceLabel setText:ad.price];
     [cell.customLocationLabel setText:ad.city];
     
-    if ([[ad.photos allObjects] count] > 0) {
-        Photo *itemPhoto = [[ad.photos allObjects] objectAtIndex:0];
+    if ([[ad.photos array] count] > 0) {
+        Photo *itemPhoto = [[ad.photos array] objectAtIndex:0];
         
         if (!itemPhoto.data) {
             //We download the image data
