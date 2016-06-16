@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6741ACDF09A064790980CC3063613B5E'
+               BlueprintIdentifier = '04C0B27C9E119E4DE02C6AE5F8C8AC43'
                BlueprintName = 'Pods-fixeAdsTest'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-fixeAdsTest.a'>

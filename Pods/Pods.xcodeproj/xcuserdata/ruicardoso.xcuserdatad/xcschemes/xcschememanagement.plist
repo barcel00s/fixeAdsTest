@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>APParallaxHeader.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>FontAwesomeKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +27,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5DF21164C6E1DC7DEE4CA35AD0FD7B25</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6741ACDF09A064790980CC3063613B5E</key>
+		<key>04C0B27C9E119E4DE02C6AE5F8C8AC43</key>
 		<dict>
 			<key>primary</key>
 			<true/>

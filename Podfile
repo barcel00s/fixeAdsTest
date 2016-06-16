@@ -10,9 +10,6 @@ target 'fixeAdsTest' do
   #https://github.com/PrideChung/FontAwesomeKit
   pod 'FontAwesomeKit', '~> 2.2.0'
   
-  #APParallaxHeader - https://github.com/apping/APParallaxHeader
-  pod 'APParallaxHeader'
-
   target 'fixeAdsTestTests' do
     inherit! :search_paths
     # Pods for testing
