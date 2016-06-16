@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ad View Controller-->
         <scene sceneID="Gdg-7z-EvA">
             <objects>
-                <viewController id="s0m-mJ-M7d" sceneMemberID="viewController">
+                <viewController id="s0m-mJ-M7d" customClass="adViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G0r-1n-hjk"/>
                         <viewControllerLayoutGuide type="bottom" id="nG9-NE-H09"/>
@@ -71,7 +71,7 @@
         <!--Split View Controller-->
         <scene sceneID="ix7-R0-7qj">
             <objects>
-                <splitViewController id="kdH-HT-tCz" customClass="splitViewController" sceneMemberID="viewController">
+                <splitViewController id="kdH-HT-tCz" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Zi3-nR-C0p" kind="relationship" relationship="masterViewController" id="pOQ-IO-Mtf"/>
                         <segue destination="s0m-mJ-M7d" kind="relationship" relationship="detailViewController" id="6GX-xX-usJ"/>

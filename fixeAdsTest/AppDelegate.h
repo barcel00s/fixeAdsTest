@@ -17,5 +17,8 @@
 @property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (nonatomic, strong) NSString *appFont;
+
+- (void)saveContext;
+
 @end
 

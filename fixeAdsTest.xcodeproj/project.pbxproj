@@ -20,7 +20,12 @@
 		F329118A1D107F7300E8D23D /* Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911841D107F7300E8D23D /* Ad.m */; };
 		F329118B1D107F7300E8D23D /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911861D107F7300E8D23D /* Photo+CoreDataProperties.m */; };
 		F329118C1D107F7300E8D23D /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911881D107F7300E8D23D /* Photo.m */; };
-		F329118F1D10BF7200E8D23D /* splitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F329118E1D10BF7200E8D23D /* splitViewController.m */; };
+		F329119F1D10D47C00E8D23D /* showAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F329119E1D10D47C00E8D23D /* showAdViewController.m */; };
+		F32911AA1D1164EA00E8D23D /* imagePageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911A81D1164EA00E8D23D /* imagePageContentViewController.m */; };
+		F32911AB1D1164EA00E8D23D /* imagePageContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32911A91D1164EA00E8D23D /* imagePageContentViewController.xib */; };
+		F32911AE1D11652D00E8D23D /* imageSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911AD1D11652D00E8D23D /* imageSliderViewController.m */; };
+		F32911B21D116ECC00E8D23D /* adViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32911B01D116ECC00E8D23D /* adViewController.m */; };
+		F32911B31D116ECC00E8D23D /* adViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32911B11D116ECC00E8D23D /* adViewController.xib */; };
 		F3C04E441D1051F5001DE898 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C04E431D1051F5001DE898 /* main.m */; };
 		F3C04E471D1051F5001DE898 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C04E461D1051F5001DE898 /* AppDelegate.m */; };
 		F3C04E4A1D1051F5001DE898 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C04E491D1051F5001DE898 /* ViewController.m */; };
@@ -29,6 +34,11 @@
 		F3C04E521D1051F5001DE898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C04E501D1051F5001DE898 /* LaunchScreen.storyboard */; };
 		F3C04E5D1D1051F5001DE898 /* fixeAdsTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C04E5C1D1051F5001DE898 /* fixeAdsTestTests.m */; };
 		F3C04E681D1051F5001DE898 /* fixeAdsTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C04E671D1051F5001DE898 /* fixeAdsTestUITests.m */; };
+		F3C597B51D11D3E80080DE9B /* presentImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597B41D11D3E80080DE9B /* presentImagesViewController.m */; };
+		F3C597B71D12072C0080DE9B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C597B61D12072C0080DE9B /* MapKit.framework */; };
+		F3C597BB1D1208580080DE9B /* mapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597BA1D1208580080DE9B /* mapViewController.m */; };
+		F3C597C61D121F2E0080DE9B /* ModalCustomPresentAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597C31D121F2E0080DE9B /* ModalCustomPresentAnimationController.m */; };
+		F3C597C71D121F2E0080DE9B /* ModalCustomDismissAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C597C51D121F2E0080DE9B /* ModalCustomDismissAnimationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +85,16 @@
 		F32911861D107F7300E8D23D /* Photo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataProperties.m"; sourceTree = "<group>"; };
 		F32911871D107F7300E8D23D /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		F32911881D107F7300E8D23D /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
-		F329118D1D10BF7200E8D23D /* splitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splitViewController.h; sourceTree = "<group>"; };
-		F329118E1D10BF7200E8D23D /* splitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splitViewController.m; sourceTree = "<group>"; };
+		F329119D1D10D47C00E8D23D /* showAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showAdViewController.h; sourceTree = "<group>"; };
+		F329119E1D10D47C00E8D23D /* showAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showAdViewController.m; sourceTree = "<group>"; };
+		F32911A71D1164EA00E8D23D /* imagePageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imagePageContentViewController.h; sourceTree = "<group>"; };
+		F32911A81D1164EA00E8D23D /* imagePageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imagePageContentViewController.m; sourceTree = "<group>"; };
+		F32911A91D1164EA00E8D23D /* imagePageContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = imagePageContentViewController.xib; sourceTree = "<group>"; };
+		F32911AC1D11652D00E8D23D /* imageSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageSliderViewController.h; sourceTree = "<group>"; };
+		F32911AD1D11652D00E8D23D /* imageSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageSliderViewController.m; sourceTree = "<group>"; };
+		F32911AF1D116ECC00E8D23D /* adViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adViewController.h; sourceTree = "<group>"; };
+		F32911B01D116ECC00E8D23D /* adViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = adViewController.m; sourceTree = "<group>"; };
+		F32911B11D116ECC00E8D23D /* adViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = adViewController.xib; sourceTree = "<group>"; };
 		F3C04E3F1D1051F5001DE898 /* fixeAdsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fixeAdsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C04E431D1051F5001DE898 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3C04E451D1051F5001DE898 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +111,15 @@
 		F3C04E631D1051F5001DE898 /* fixeAdsTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fixeAdsTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C04E671D1051F5001DE898 /* fixeAdsTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fixeAdsTestUITests.m; sourceTree = "<group>"; };
 		F3C04E691D1051F5001DE898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3C597B31D11D3E80080DE9B /* presentImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = presentImagesViewController.h; sourceTree = "<group>"; };
+		F3C597B41D11D3E80080DE9B /* presentImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = presentImagesViewController.m; sourceTree = "<group>"; };
+		F3C597B61D12072C0080DE9B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F3C597B91D1208580080DE9B /* mapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapViewController.h; sourceTree = "<group>"; };
+		F3C597BA1D1208580080DE9B /* mapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapViewController.m; sourceTree = "<group>"; };
+		F3C597C21D121F2E0080DE9B /* ModalCustomPresentAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalCustomPresentAnimationController.h; path = ../ModalCustomPresentAnimationController.h; sourceTree = "<group>"; };
+		F3C597C31D121F2E0080DE9B /* ModalCustomPresentAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalCustomPresentAnimationController.m; path = ../ModalCustomPresentAnimationController.m; sourceTree = "<group>"; };
+		F3C597C41D121F2E0080DE9B /* ModalCustomDismissAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalCustomDismissAnimationController.h; path = ../ModalCustomDismissAnimationController.h; sourceTree = "<group>"; };
+		F3C597C51D121F2E0080DE9B /* ModalCustomDismissAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalCustomDismissAnimationController.m; path = ../ModalCustomDismissAnimationController.m; sourceTree = "<group>"; };
 		F92E5398079C9D9F900DE868 /* Pods-fixeAdsTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fixeAdsTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fixeAdsTestUITests/Pods-fixeAdsTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C597B71D12072C0080DE9B /* MapKit.framework in Frameworks */,
 				F329117F1D107D0B00E8D23D /* CoreData.framework in Frameworks */,
 				53F63D275D5E601F930517BC /* libPods-fixeAdsTest.a in Frameworks */,
 			);
@@ -128,6 +156,7 @@
 		0B48E2669825C763590EE596 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3C597B61D12072C0080DE9B /* MapKit.framework */,
 				6E7F3C4EF46F8B38BD08AB33 /* libPods-fixeAdsTest.a */,
 				1FA4F708A0A2D94CF1FC0E8D /* libPods-fixeAdsTestTests.a */,
 				D53778F1B7C90B0106825DB1 /* libPods-fixeAdsTestUITests.a */,
@@ -148,6 +177,37 @@
 				F32911881D107F7300E8D23D /* Photo.m */,
 			);
 			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		F32911A51D1162C800E8D23D /* Ad Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F329119D1D10D47C00E8D23D /* showAdViewController.h */,
+				F329119E1D10D47C00E8D23D /* showAdViewController.m */,
+				F32911AF1D116ECC00E8D23D /* adViewController.h */,
+				F32911B01D116ECC00E8D23D /* adViewController.m */,
+				F32911B11D116ECC00E8D23D /* adViewController.xib */,
+				F32911A71D1164EA00E8D23D /* imagePageContentViewController.h */,
+				F32911A81D1164EA00E8D23D /* imagePageContentViewController.m */,
+				F32911A91D1164EA00E8D23D /* imagePageContentViewController.xib */,
+				F32911AC1D11652D00E8D23D /* imageSliderViewController.h */,
+				F32911AD1D11652D00E8D23D /* imageSliderViewController.m */,
+				F3C597B31D11D3E80080DE9B /* presentImagesViewController.h */,
+				F3C597B41D11D3E80080DE9B /* presentImagesViewController.m */,
+			);
+			name = "Ad Detail";
+			sourceTree = "<group>";
+		};
+		F32911A61D1162E600E8D23D /* Ad List */ = {
+			isa = PBXGroup;
+			children = (
+				F32911701D10594B00E8D23D /* itemListTableViewController.h */,
+				F32911711D10594B00E8D23D /* itemListTableViewController.m */,
+				F32911761D105EDE00E8D23D /* itemListTableViewCell.h */,
+				F32911771D105EDE00E8D23D /* itemListTableViewCell.m */,
+				F32911781D105EDE00E8D23D /* itemListTableViewCell.xib */,
+			);
+			name = "Ad List";
 			sourceTree = "<group>";
 		};
 		F3C04E361D1051F5001DE898 = {
@@ -178,16 +238,18 @@
 		F3C04E411D1051F5001DE898 /* fixeAdsTest */ = {
 			isa = PBXGroup;
 			children = (
+				F3C597C21D121F2E0080DE9B /* ModalCustomPresentAnimationController.h */,
+				F3C597C31D121F2E0080DE9B /* ModalCustomPresentAnimationController.m */,
+				F3C597C41D121F2E0080DE9B /* ModalCustomDismissAnimationController.h */,
+				F3C597C51D121F2E0080DE9B /* ModalCustomDismissAnimationController.m */,
+				F3C597B81D1208410080DE9B /* MapView */,
 				F32911801D107F5200E8D23D /* Core Data */,
 				F3C04E451D1051F5001DE898 /* AppDelegate.h */,
 				F3C04E461D1051F5001DE898 /* AppDelegate.m */,
 				F3C04E481D1051F5001DE898 /* ViewController.h */,
 				F3C04E491D1051F5001DE898 /* ViewController.m */,
-				F32911701D10594B00E8D23D /* itemListTableViewController.h */,
-				F32911711D10594B00E8D23D /* itemListTableViewController.m */,
-				F32911761D105EDE00E8D23D /* itemListTableViewCell.h */,
-				F32911771D105EDE00E8D23D /* itemListTableViewCell.m */,
-				F32911781D105EDE00E8D23D /* itemListTableViewCell.xib */,
+				F32911A51D1162C800E8D23D /* Ad Detail */,
+				F32911A61D1162E600E8D23D /* Ad List */,
 				F3C04E4B1D1051F5001DE898 /* iPhone.storyboard */,
 				F329116E1D10580700E8D23D /* iPadStoryboard.storyboard */,
 				F3C04E4E1D1051F5001DE898 /* Assets.xcassets */,
@@ -195,8 +257,6 @@
 				F3C04E531D1051F5001DE898 /* Info.plist */,
 				F3C04E421D1051F5001DE898 /* Supporting Files */,
 				F329117B1D106BB400E8D23D /* Model.xcdatamodeld */,
-				F329118D1D10BF7200E8D23D /* splitViewController.h */,
-				F329118E1D10BF7200E8D23D /* splitViewController.m */,
 			);
 			path = fixeAdsTest;
 			sourceTree = "<group>";
@@ -225,6 +285,15 @@
 				F3C04E691D1051F5001DE898 /* Info.plist */,
 			);
 			path = fixeAdsTestUITests;
+			sourceTree = "<group>";
+		};
+		F3C597B81D1208410080DE9B /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				F3C597B91D1208580080DE9B /* mapViewController.h */,
+				F3C597BA1D1208580080DE9B /* mapViewController.m */,
+			);
+			name = MapView;
 			sourceTree = "<group>";
 		};
 		FA6EB8370B0FEBA09A5A042E /* Pods */ = {
@@ -351,7 +420,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32911AB1D1164EA00E8D23D /* imagePageContentViewController.xib in Resources */,
 				F329117A1D105EDE00E8D23D /* itemListTableViewCell.xib in Resources */,
+				F32911B31D116ECC00E8D23D /* adViewController.xib in Resources */,
 				F3C04E521D1051F5001DE898 /* LaunchScreen.storyboard in Resources */,
 				F3C04E4F1D1051F5001DE898 /* Assets.xcassets in Resources */,
 				F3C04E4D1D1051F5001DE898 /* iPhone.storyboard in Resources */,
@@ -504,15 +575,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3C04E4A1D1051F5001DE898 /* ViewController.m in Sources */,
+				F32911B21D116ECC00E8D23D /* adViewController.m in Sources */,
 				F3C04E471D1051F5001DE898 /* AppDelegate.m in Sources */,
+				F3C597B51D11D3E80080DE9B /* presentImagesViewController.m in Sources */,
+				F3C597C71D121F2E0080DE9B /* ModalCustomDismissAnimationController.m in Sources */,
 				F32911721D10594B00E8D23D /* itemListTableViewController.m in Sources */,
 				F329118B1D107F7300E8D23D /* Photo+CoreDataProperties.m in Sources */,
 				F3C04E441D1051F5001DE898 /* main.m in Sources */,
+				F32911AA1D1164EA00E8D23D /* imagePageContentViewController.m in Sources */,
+				F3C597C61D121F2E0080DE9B /* ModalCustomPresentAnimationController.m in Sources */,
 				F329118A1D107F7300E8D23D /* Ad.m in Sources */,
-				F329118F1D10BF7200E8D23D /* splitViewController.m in Sources */,
+				F329119F1D10D47C00E8D23D /* showAdViewController.m in Sources */,
 				F32911891D107F7300E8D23D /* Ad+CoreDataProperties.m in Sources */,
+				F3C597BB1D1208580080DE9B /* mapViewController.m in Sources */,
 				F32911791D105EDE00E8D23D /* itemListTableViewCell.m in Sources */,
 				F329118C1D107F7300E8D23D /* Photo.m in Sources */,
+				F32911AE1D11652D00E8D23D /* imageSliderViewController.m in Sources */,
 				F329117D1D106BB400E8D23D /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

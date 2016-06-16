@@ -16,4 +16,8 @@
 
 #define kBasePhotosURL @"https://img.olx.pt/images_olxpt/"
 
+#define navigationBarAndStatusBarHeight 63.0
+
+#define kTimeTransitionDuration 0.6
+
 #endif /* constants_h */

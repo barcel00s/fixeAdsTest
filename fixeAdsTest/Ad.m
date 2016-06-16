@@ -35,12 +35,10 @@
     [newAd setPrice:[details objectForKey:@"list_label_ad"]];
     
     NSNumber *latitude = [NSNumber numberWithFloat:((NSString *)[details objectForKey:@"map_lat"]).floatValue];
-    
     [newAd setMap_latitude:latitude];
     
     NSNumber *longitude = [NSNumber numberWithFloat:((NSString *)[details objectForKey:@"map_lon"]).floatValue];
-    
-    [newAd setMap_latitude:longitude];
+    [newAd setMap_longitude:longitude];
     
     [newAd setMap_radius:[details objectForKey:@"map_radius"]];
     
@@ -51,7 +49,12 @@
     [newAd setUrl:[details objectForKey:@"url"]];
     [newAd setUrl_preview:[details objectForKey:@"preview_url"]];
     [newAd setUser_ads_url:[details objectForKey:@"user_ads_url"]];
-    [newAd setUsername:[details objectForKey:@"person"]];
+    
+    if (![[details objectForKey:@"person"] isEqualToString:@""] && ![[details objectForKey:@"person"] isEqualToString:@" "]) {
+        [newAd setUsername:[details objectForKey:@"person"]];
+    }
+    //Default is "Não identificado"
+    
     
     //Now we add the photos.
     NSDictionary *photos = [details objectForKey:@"photos"];

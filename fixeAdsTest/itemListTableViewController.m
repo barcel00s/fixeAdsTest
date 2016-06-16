@@ -9,6 +9,7 @@
 #import "itemListTableViewController.h"
 #import "itemListTableViewCell.h"
 #import "Ad.h"
+#import "showAdViewController.h"
 
 @interface itemListTableViewController ()<NSFetchedResultsControllerDelegate,itemListTableViewCellProtocol>
 
@@ -19,8 +20,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        
+    //Initializations
+    UIImage *logo = [UIImage imageNamed:@"OLX"];
     
-    //Initializations    
+    UIView *logoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 60, 60)];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [imageView setImage:logo];
+    
+    [logoView addSubview:imageView];
+    
+    [self.navigationItem setTitleView:logoView];
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"itemListTableViewCell" bundle:nil] forCellReuseIdentifier:@"itemCell"];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -79,14 +91,18 @@
             
             NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:cell.imageURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
             
+            NSManagedObjectContext *subContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+            
+            [subContext setParentContext:[sharedAppDelegate managedObjectContext]];
+            
             [[[NSURLSession sharedSession] dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 
                 if (error) {
                     NSLog(@"Error downloading image %@ - %@",cell.imageURL,error.localizedDescription);
                 }
                 else if([response.URL isEqual:cell.imageURL]){
+                    
                     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                        [itemPhoto setData:data];
                         
                         [cell.customImageView setContentMode:UIViewContentModeScaleAspectFill];
                         
@@ -96,8 +112,22 @@
                             [[cell.customImageView superview] setAlpha:1.0];
                         }];
                         
-                        //[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
                     }];
+                    
+                    //Persist the image data.
+                    Photo *photoInContext = [Photo findPhotoWithURL:urlRequest.URL.absoluteString inContext:subContext];
+                    
+                    [photoInContext setData:data];
+                    
+                    if(![subContext save:&error]){
+                        NSLog(@"Error saving subcontext in image download: %@",error.localizedDescription);
+                    }
+                    else{
+                        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                            [sharedAppDelegate saveContext];
+                        }];
+                    }
+
                 }
                 
             }] resume];
@@ -108,14 +138,6 @@
         }
         
     }
-    
-    //http://img.olx.pt/images_olxpt/
-    //return [NSString stringWithFormat:@"%@%@_%@_%@x%@.jpg", kBasePhotoUrl, self.riak_key, self.slot_id, self.width, self.height];
-
-    
-    //Fetch the ad image (for this fetch we can use NSURLRequestReturnCacheDataElseLoad so as not to reload the same images and to therefore reduce data usage)
-    
-    
     
     return cell;
 }
@@ -131,6 +153,11 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    Ad *selectedAd = [[_fetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:@"showAd" sender:selectedAd];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 /*
@@ -162,30 +189,44 @@
     
     [activityController setExcludedActivityTypes:@[UIActivityTypePostToVimeo,UIActivityTypePostToTencentWeibo,UIActivityTypePostToWeibo,UIActivityTypeAssignToContact,UIActivityTypeOpenInIBooks]];
     
+    if ( [activityController respondsToSelector:@selector(popoverPresentationController)] ) {
+        
+        [activityController.popoverPresentationController setSourceRect:CGRectMake(0, 15, 1, 1)];
+        [activityController.popoverPresentationController setSourceView:cell.shareButton];
+    }
+    
     [self presentViewController:activityController
                                            animated:YES
                                          completion:nil];
+    
+}
+
+#pragma mark Navigation
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"showAd"]) {
+        showAdViewController *showAdController = (showAdViewController *)segue.destinationViewController;
         
+        [showAdController setAds:[_fetchedResultsController fetchedObjects]];
+        [showAdController setSelectedAd:sender];
+    }
+    
 }
 
 #pragma mark Functions
 -(void)loadTableView{
-    
-    //We can't use NSURLRequestReturnCacheDataElseLoad here to cache the response otherwise the ads wouldn't be refreshed. To persist the results we will keep the response on NSUserDefaults to be used in case the user can't establish a connection to the server.
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:itemsDatasourceURLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
-            //TODO: Use stored data
             NSLog(@"Error fetching data from server: %@",error.localizedDescription);
         }
         else{
             NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
             
             if (error) {
-                //TODO: Use stored data
                 NSLog(@"Error decoding response from server: %@",error.localizedDescription);
             }
             else{
@@ -254,10 +295,10 @@
     NSEntityDescription *entity     = [NSEntityDescription entityForName:@"Ad" inManagedObjectContext:[sharedAppDelegate managedObjectContext]];
     [fetchRequest setEntity:entity];
     
-    // Create the sort descriptors array.
-    NSSortDescriptor *cityDescriptor   = [NSSortDescriptor sortDescriptorWithKey:@"city" ascending:YES];
-    NSSortDescriptor *titleDescriptor   = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
-    NSArray *sortDescriptors                = [NSArray arrayWithObjects:cityDescriptor, titleDescriptor, nil];
+    // Create the sort descriptors array. Order from most recent ID to oldest
+    NSSortDescriptor *idDescriptor   = [NSSortDescriptor sortDescriptorWithKey:@"ad_id" ascending:NO];
+    //NSSortDescriptor *titleDescriptor   = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    NSArray *sortDescriptors                = [NSArray arrayWithObjects:idDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
 
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[sharedAppDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
